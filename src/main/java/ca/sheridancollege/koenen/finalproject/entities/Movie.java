@@ -4,30 +4,25 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.proxy.HibernateProxy;
 
-import java.util.Date;
 import java.util.Objects;
 
 @Entity
 @Getter
 @Setter
 @ToString
-@RequiredArgsConstructor
+@AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "movies")
+@Builder
 public class Movie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NonNull
     private String title;
-    @NonNull
-    private Date releaseDate;
-    @NonNull
+    private Integer release_year;
     private String genre;
-    @NonNull
     private String director;
-    @NonNull
+    @Column(columnDefinition = "TEXT")
     private String description;
     private String posterPath;
     private String backdropPath;
