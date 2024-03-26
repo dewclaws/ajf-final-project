@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={body.className}>{children}</body>
+      <body className={`${body.className} flex justify-center p-12`}>{children}</body>
     </html>
   );
 }
