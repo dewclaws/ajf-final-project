@@ -10,9 +10,9 @@ export default async function Home() {
   const movies = await getMovies();
 
   return (
-      <main className="p-12 space-y-6">
+      <main className="space-y-6">
         <h1 className="text-4xl font-bold">All Movies</h1>
-        <ul className="grid grid-cols-8 gap-4">
+        <ul className="grid grid-cols-6 gap-4">
           {movies.map((movie) => (
               <MovieListing details={movie} key={movie.id}/>
           ))}
